@@ -2,7 +2,7 @@ import numpy as np
 
 
 all_epi={}
-FILE=open('/local/disk4/mqzhou/covid19/results/epitope/all_epitopes','r')
+FILE=open('all_epitope','r')
 for line in FILE:
     line=line.strip()
     all_epi[line]=1
@@ -83,10 +83,8 @@ for epi in all_epi.keys():
             k=k+1
         group[string]=1
 
-NEW=open('consolidate_simple.txt','w')
 g_i=1
 for uniq_group in sorted(group.keys()):
     string='|'+str(g_i)+'|'+uniq_group+'|'
-    NEW.write(string)
-    NEW.write('\n')
+    print(string)
     g_i=g_i+1
